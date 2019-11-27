@@ -2,6 +2,7 @@ package com.example.demo.not_working;
 
 import com.example.demo.MyClass;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,8 +13,8 @@ import static com.example.demo.not_working.ResourceBeanClass.MYCLASS_METHOD_B_BE
 
 @RestController // Zakomentuj tę anotację to zacznie działać...
 @RequestMapping("/path")
-@AllArgsConstructor
 public class SomeController {
+    @Autowired
     @Qualifier(MYCLASS_METHOD_B_BEAN)
     private MyClass myClass;
 
